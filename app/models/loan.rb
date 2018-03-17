@@ -9,7 +9,7 @@ class Loan < ApplicationRecord
   validates :term, presence: true
   validates :rate, presence: true
   validates :payment_period, presence: true
-  validates :overdue_period, presence: true
+  validates :overdue_rate, presence: true
   validates :opening_date, presence: true
 
   def paid
