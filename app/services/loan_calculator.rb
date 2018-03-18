@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# LoanCalcualtor is a service to calculate investor's revenue
+# LoanCalculator is a service that calculates investor's revenue
 # for the given loan
 class LoanCalculator
   attr_reader :loan
@@ -22,12 +22,14 @@ class LoanCalculator
   end
 
   def actual_rate
-    total = 0
-    count = 0
-    Loan.eager_load(:payments).find_each do |l|
-      total += ((l.paid / l.amount.to_f) - 1) / l.term_in_years
-      count += 1
+    @actual_rate ||= begin
+      total = 0
+      count = 0
+      Loan.eager_load(:payments).find_each do |l|
+        total += ((l.paid / l.amount.to_f) - 1) / l.term_in_years
+        count += 1
+      end
+      total / count
     end
-    total / count
   end
 end

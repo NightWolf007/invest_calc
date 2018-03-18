@@ -20,6 +20,12 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+gem 'slim', '~> 3.0'
+gem 'slim-rails'
+
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
+
 group :development, :test do
   gem 'byebug'
 end
@@ -33,8 +39,8 @@ group :development do
 end
 
 group :test do
+  gem 'factory_bot_rails'
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
   gem 'simplecov', require: false
 end

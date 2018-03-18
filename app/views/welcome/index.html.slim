@@ -1,0 +1,49 @@
+div.col-12
+  h3 Calculate your investment revenue
+
+  div.mt-4
+    form#revenueForm
+      div.row
+        div.col-sm-1
+          = label_tag(:amount, 'Amount:')
+        div.col.sm-1
+          = number_field_tag(:amount, nil, required: true)
+      div.row
+        div.col-sm-1
+          = label_tag(:term, 'Term:')
+        div.col-sm-1
+          = number_field_tag(:term, nil, required: true)
+      div.row
+        div.col-sm-1
+          = label_tag(:rate, 'Rate:')
+        div.col-sm-1
+          = number_field_tag(:rate, nil, required: true)
+      div.row.mt-2
+        div.col-sm-2
+          input.btn.btn-success type='submit' value='Calculate'
+
+  div.mt-5
+    div.row
+      div.col-sm-2
+        p Expected Rate:
+      div.col-sm-2
+        p
+          span#expectedRate
+          span %
+    div.row
+      div.col-sm-2
+        p Expected Revenue:
+      div.col-sm-2
+        p#expectedRevenue
+    div.row
+      div.col-sm-2
+        p Actual Rate:
+      div.col-sm-2
+        p
+          span#actualRate
+          span %
+    div.row
+      div.col-sm-2
+        p Actual Revenue:
+      div.col-sm-2
+        p#actualRevenue
