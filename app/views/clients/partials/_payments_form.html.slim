@@ -1,0 +1,11 @@
+= sup_form.fields_for :payments do |payments_form|
+  div.row
+    div.col-sm-1
+      = payments_form.label :date
+    div.col-sm-1
+      = payments_form.date_field :date, required: true
+  div.row
+    div.col-sm-1
+      = payments_form.label :amount
+    div.col-sm-1
+      = payments_form.number_field :amount, required: true 

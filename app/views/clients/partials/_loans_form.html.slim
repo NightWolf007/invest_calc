@@ -1,0 +1,36 @@
+= sup_form.fields_for :loans do |loans_form|
+  div.row
+    div.col-sm-1
+      = loans_form.label :amount
+    div.col-sm-1
+      = loans_form.number_field :amount, required: true
+  div.row
+    div.col-sm-1
+      = loans_form.label :term
+    div.col-sm-1
+      = loans_form.number_field :term, required: true
+  div.row
+    div.col-sm-1
+      = loans_form.label :rate
+    div.col-sm-1
+      = loans_form.number_field :rate, required: true
+  div.row
+    div.col-sm-1
+      = loans_form.label :payment_period
+    div.col-sm-1
+      = loans_form.number_field :payment_period, required: true
+  div.row
+    div.col-sm-1
+      = loans_form.label :overdue_rate
+    div.col-sm-1
+      = loans_form.number_field :overdue_rate, required: true
+  div.row
+    div.col-sm-1
+      = loans_form.label :opening_date
+    div.col-sm-1
+      = loans_form.date_field :opening_date, required: true
+  div.row
+    div.col-sm-12
+      h5 Payments
+      div.col-sm-12
+        = render partial: 'clients/partials/payments_form', locals: { sup_form: loans_form }

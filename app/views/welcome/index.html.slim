@@ -1,12 +1,15 @@
 div.col-12
-  h3 Calculate your investment revenue
+  div.mt-2
+    = link_to 'New Client', new_client_path, class: 'btn btn-secondary'
+
+  h3.mt-5 Calculate your investment revenue
 
   div.mt-4
     form#revenueForm
       div.row
         div.col-sm-1
           = label_tag(:amount, 'Amount:')
-        div.col.sm-1
+        div.col-sm-1
           = number_field_tag(:amount, nil, required: true)
       div.row
         div.col-sm-1

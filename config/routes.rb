@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   end
 
   root to: 'welcome#index'
+
+  resources :clients, only: %i[new create]
 end

@@ -8,7 +8,7 @@ class ClientsController < ApplicationController
 
   def create
     @client = Client.new(client_params)
-    redirect_to :welcome if @client.save
+    return redirect_to root_url if @client.save
     render action: :new
   end
 
