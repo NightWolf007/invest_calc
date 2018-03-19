@@ -1,0 +1,9 @@
+.byebug_history
+.dockerignore
+.ruby-version
+Dockerfile
+coverage
+docker-compose.yml
+log
+tmp
+config/database.yml
