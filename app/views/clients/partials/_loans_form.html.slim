@@ -3,12 +3,12 @@
     div.col-sm-1
       = loans_form.label :amount
     div.col-sm-1
-      = loans_form.number_field :amount, required: true
+      = loans_form.number_field :amount, required: true, min: 0, step: 0.01
   div.row
     div.col-sm-1
       = loans_form.label :term
     div.col-sm-1
-      = loans_form.number_field :term, required: true
+      = loans_form.number_field :term, required: true, min: 0
   div.row
     div.col-sm-1
       = loans_form.label :rate
@@ -18,7 +18,7 @@
     div.col-sm-1
       = loans_form.label :payment_period
     div.col-sm-1
-      = loans_form.number_field :payment_period, required: true
+      = loans_form.number_field :payment_period, required: true, min: 0
   div.row
     div.col-sm-1
       = loans_form.label :overdue_rate

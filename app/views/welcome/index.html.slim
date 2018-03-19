@@ -10,12 +10,12 @@ div.col-12
         div.col-sm-1
           = label_tag(:amount, 'Amount:')
         div.col-sm-1
-          = number_field_tag(:amount, nil, required: true)
+          = number_field_tag(:amount, nil, required: true, min: 0, step: 0.01)
       div.row
         div.col-sm-1
           = label_tag(:term, 'Term:')
         div.col-sm-1
-          = number_field_tag(:term, nil, required: true)
+          = number_field_tag(:term, nil, required: true, min: 0)
       div.row
         div.col-sm-1
           = label_tag(:rate, 'Rate:')

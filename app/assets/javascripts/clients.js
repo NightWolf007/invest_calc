@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    $('#new_client').submit(function () {
+        $(this).find('input[id$=_amount]').each(function() {
+            value = Math.floor(parseFloat($(this).val()) * 100)
+            $(this).val(value)
+        })
+    })
+
     $('#addLoan').click(function (event) {
         event.preventDefault()
         addLoan()

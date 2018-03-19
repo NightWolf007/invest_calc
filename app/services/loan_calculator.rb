@@ -25,11 +25,13 @@ class LoanCalculator
     @actual_rate ||= begin
       total = 0
       count = 0
+      # find average actual rate regardless of loan's term and rate
       Loan.eager_load(:payments).find_each do |l|
-        total += ((l.paid / l.amount.to_f) - 1) / l.term_in_years
+        total += l.actual_rate / l.term_in_years / l.rate
         count += 1
       end
-      total / count
+      # average multuplied by given loan's rate to return the dependence on rate
+      total / count * loan.rate
     end
   end
 end
