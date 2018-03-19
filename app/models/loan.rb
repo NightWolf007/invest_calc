@@ -12,6 +12,8 @@ class Loan < ApplicationRecord
   validates :overdue_rate, presence: true
   validates :opening_date, presence: true
 
+  accepts_nested_attributes_for :payments
+
   def paid
     payments.map(&:amount).reduce(:+)
   end

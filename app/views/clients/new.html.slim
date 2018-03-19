@@ -2,6 +2,7 @@ div.col-12
   h3 New Client
 
   div.mt-4
+    div.row
     = form_for @client, url: {action: 'create'} do |f|
       div.row
         div.col-sm-1
@@ -11,8 +12,11 @@ div.col-12
       div.row
         div.col-sm-12
           h5 Loans
-          div.col-sm-12
-            = render partial: 'clients/partials/loans_form', locals: { sup_form: f }
+          a#addLoan.btn.btn-success href='javascript:void(0)' Add
+          div#loans.col-sm-12
+            div#loanForm.col-sm-12.mt-3
+              hr
+              = render partial: 'clients/partials/loans_form', locals: { sup_form: f }
       div.row.mt-2
         div.col-sm-2
           = f.submit 'Create', class: 'btn btn-success'
